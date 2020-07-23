@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        header{
+            background-color: crimson;
+        }
+        header ul{
+            list-style-type: none;
+        }
+        header a{
+            display: block;
+            padding: 20px;
+            color: #fff;
+            font-size: 1.1em;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        header a:hover{
+            background-color: rgba(0,0,0,.1);
+        }
+        .navbar-main{
+            width: 70%;
+            margin: auto;
+            text-align: right;
+        }
+        .navbar-main li{
+            display: inline-block;
+            
+        }
+        .navbar-second{
+            width: 420px;
+            background-color: crimson;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transform: translateX(-420px);
+            transition: transform 0.3s cubic-bezier(.94,.06,.78,.74);
+            min-height: 100vh;
+            box-shadow: 2px 0px 10px rgba(0,0,0,.1);
+        }
+        .navbar-second .nav-toggle{
+            min-height: 50px;
+            width: 50px;
+            position: absolute;
+            top: 5px;
+            right: -55px;
+            background-color: rgba(0,0,0,.1);
+            cursor: pointer;
+            transition: transform 0.3s ;
+        }
+        .nav-toggle span{
+            display: block;
+            height: 3px; 
+            width: 70%;
+            margin: auto;
+            background-color: #fff;
+            position: relative;
+            top: 23px;
+        }
+        .nav-toggle span:before{
+            content: '';
+            height: 3px;
+            width: 100%;
+            background-color: #fff;
+            position: absolute;
+            top: -10px;
+        }
+        .nav-toggle span:after{
+            content: '';
+            height: 3px;
+            width: 100%;
+            background-color: #fff;
+            position: absolute;
+            top: 10px;
+        }
+        
+        
+        
+/*        show the second navbar*/
+        header.open .navbar-second{
+            transform: translateX(0);
+        }
+        header.open .nav-toggle{
+            transform: scale(0.8);
+        }
+        
+        
+    
+    </style>
+</head>
+<body>
+    <header class="" id="header">
+        <div class="navbar-main">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+        <div class="navbar-second">
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="">Category 1</a></li>
+                <li><a href="">Category 2</a></li>
+                <li><a href="">Category 3</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <script src="script.js"></script>
+</body>
+</html>
